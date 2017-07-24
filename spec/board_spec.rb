@@ -20,7 +20,15 @@ module TicTacToe
     end
    end
 
+  end
+  
+  context "#grid" do 
+   it "returns the grid" do 
+    board = Board.new(grid: "hello")
+    expect(board.grid).to eq "hello"
+   end 
   end 
+ 
  end 
 end 
 

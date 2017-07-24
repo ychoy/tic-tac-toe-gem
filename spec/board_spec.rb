@@ -36,7 +36,16 @@ module TicTacToe
     expect(board.get_cell(2,1)).to eq "x"
    end
   end 
- 
+
+  context "#set_cell" do
+  it "updates the value of the cell object at a (x, y) coordinate" do
+    Cow = Struct.new(:value) #use Struct to create a new object that responds to the value messages
+    grid = [[Cow.new("cool"), "", ""], ["", "", ""], ["", "", ""]]
+    board = Board.new(grid: grid)
+    board.set_cell(0, 0, "moo")
+    expect(board.get_cell(0, 0).value).to eq "moo"
+  end
+end
  end 
 end 
 

@@ -26,6 +26,12 @@ module TicTacToe
   def default_grid
    Array.new(3) { Array.new(3) {Cell.new} }
   end 
+  
+  def draw? 
+  #return true if none of Array elements are empty. 
+  #Check by converting cells into single array of values and call Array#non_empty? to check for a draw 
+   grid.flatten.amp{|cell| cell.value}.none_empty?
+  end 
  end 
 end 
 

@@ -38,14 +38,35 @@ module TicTacToe
   end 
 
   context "#set_cell" do
-  it "updates the value of the cell object at a (x, y) coordinate" do
+   it "updates the value of the cell object at a (x, y) coordinate" do
     Cow = Struct.new(:value) #use Struct to create a new object that responds to the value messages
     grid = [[Cow.new("cool"), "", ""], ["", "", ""], ["", "", ""]]
     board = Board.new(grid: grid)
     board.set_cell(0, 0, "moo")
     expect(board.get_cell(0, 0).value).to eq "moo"
+   end
   end
-end
+  context "#game_over" do
+   it "returns :winner if winner? is true" do
+    board = Board.new
+    board.stub(:winner?) { true }
+    expect(board.game_over).to eq :winner
+   end
+ 
+   it "returns :draw if winner? is false and draw? is true" do
+    board = Board.new
+    board.stub(:winner?) { false }
+    board.stub(:draw?) { true }
+    expect(board.game_over).to eq :draw
+   end
+ 
+   it "returns false if winner? is false and draw? is false" do
+    board = Board.new
+    board.stub(:winner?) { false }
+    board.stub(:draw?) { false }
+    expect(board.game_over).to be_false
+   end
+  end
  end 
 end 
 

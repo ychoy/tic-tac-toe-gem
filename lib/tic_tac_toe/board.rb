@@ -7,6 +7,10 @@ module TicTacToe
    @grid = input.fetch(:grid, default_grid)
   end 
 
+  def get_cell(x,y)
+   grid[y][x]
+  end 
+
   private
   #only called by isntances of the Board class
   def default_grid

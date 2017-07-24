@@ -11,6 +11,10 @@ module TicTacToe
    grid[y][x]
   end 
 
+  def set_cell(x,y,value)
+   get_cell(x,y).value = value 
+  end 
+
   private
   #only called by isntances of the Board class
   def default_grid

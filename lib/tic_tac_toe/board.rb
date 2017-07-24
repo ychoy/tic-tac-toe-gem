@@ -15,6 +15,12 @@ module TicTacToe
    get_cell(x,y).value = value 
   end 
 
+  def game_over
+   return :winner if winer?
+   return :draw if draw?
+   false 
+  end 
+
   private
   #only called by isntances of the Board class
   def default_grid

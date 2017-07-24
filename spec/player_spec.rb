@@ -11,7 +11,17 @@ module TicTacToe
     input = { mark: "X", name: "Someone" }
     expect { Player.new(input) }.to_not raise_error
    end  
+
   end 
+  
+  context "#mark" do 
+   it "returns the mark" do 
+    input = { mark: "X", name: "Harry" }
+    player = Player.new(input)
+    expect(player.mark). to eq "X"
+   end 
+  end 
+
  end 
 
 end 

@@ -9,3 +9,5 @@ require_relative "./tic_tac_toe/cell.rb"
 require_relative "./tic_tac_toe/player.rb"
 #load the Board class
 require_relative "./tic_tac_toe/board.rb"
+#load the core extensions
+require_relative "./tic_tac_toe/core_extensions.rb"

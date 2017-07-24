@@ -1,5 +1,7 @@
 module TicTacToe
  class Board
+  attr_reader :grid
+
   def initialize(input={})
    #Board class can be instantiated with input hash or default value
    @grid = input.fetch(:grid, default_grid)

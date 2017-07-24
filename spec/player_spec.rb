@@ -22,6 +22,14 @@ module TicTacToe
    end 
   end 
 
+  context "#name" do 
+   it "returns the name" do 
+    input = { mark: "O", name: "Maude"}
+    player = Player.new(input)
+    expect(player.name). to eq "Maude"
+   end 
+  end 
+
  end 
 
 end 
